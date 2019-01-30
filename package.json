@@ -1,0 +1,30 @@
+{
+  "name": "node-word-guess",
+  "version": "1.0.0",
+  "description": "A word-guessing game run trough the terminal using node.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romverner/Node-Word-Guess.git"
+  },
+  "keywords": [
+    "word",
+    "guessing",
+    "game",
+    "node",
+    "inquirer",
+    "javascript"
+  ],
+  "author": "Roman Verner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romverner/Node-Word-Guess/issues"
+  },
+  "homepage": "https://github.com/romverner/Node-Word-Guess#readme",
+  "dependencies": {
+    "inquirer": "^6.2.1"
+  }
+}
