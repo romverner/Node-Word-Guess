@@ -20,8 +20,16 @@ var Word = function(hiddenWord) {
         };
         localArray = localArray.join(" ");
         return localArray;
-    }
+    };
+
+    this.guessedLetter = function(l) {
+        for (var i = 0; i < wordArray.length; i++) {
+            wordArray[i].compare(l);
+            console.log(wordArray[i].guessed);
+        };
+    };
 };
 
 var word = new Word('hello');
 console.log(word.returnString());
+word.guessedLetter('l');
