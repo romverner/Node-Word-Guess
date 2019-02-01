@@ -5,7 +5,7 @@ var Letter = function(val, guessed) {
     // Reveals letter if guessed is true, else keeps placeholder
     this.revealLetter = function() {
         if (this.guessed === true) {
-            return this.val;
+            return this.val.toUpperCase();
         } else {
             return '_';
         }
