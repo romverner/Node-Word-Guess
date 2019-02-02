@@ -29,7 +29,3 @@ var Word = function(hiddenWord) {
         };
     };
 };
-
-var word = new Word('hello');
-console.log(word.returnString());
-word.guessedLetter('l');
