@@ -29,3 +29,5 @@ var Word = function(hiddenWord) {
         };
     };
 };
+
+module.exports = Word;
