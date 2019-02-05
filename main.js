@@ -3,16 +3,18 @@ var inquirer = require('inquirer');
 
 var wordArray = ['hello', 'goodbye', 'music', 'destiny', 'jazz'];
 var guessedArray = [];
-var guessCount = 0;
+var guessCount = -1;
 var wordOb;
 var chosenWord;
+var stringArray;
 
 var mainLoop = function() {
 
-    if (guessCount === 0) {
+    if (guessCount === -1) {
         chosenWord = wordArray[
             Math.floor(Math.random() * wordArray.length)];
         wordOb = new Word(chosenWord);
+        guessCount = 0;
     };
 
     inquirer
@@ -32,16 +34,32 @@ var mainLoop = function() {
 
             guessedArray.push(answers.guess.toUpperCase());
             wordOb.guessedLetter(answers.guess.toLowerCase());
+            stringArray = wordOb.returnString();
             
+            // FIX CODE HERE TO ADD WIN CONDITIONS
             if (wordOb.guessedLetter(answers.guess) > 0) {
-                    console.log("Correct!\n");
-                
+
+                stringArray = stringArray.join('').toLowerCase();
+                console.log("Correct!\n");
+
+                for (var i = 0; i < stringArray.length; i++) {
+                    if (stringArray === wordArray[i]) {
+                        console.log("You win!");
+                        inquirer.prompt(
+                            {
+                                
+                            }
+                        )
+                    };
+                };
+
+                console.log("Correct!\n");
             } else {
                 console.log("Incorrect.\n");
                 guessCount++;
             };
 
-            console.log(wordOb.returnString());
+            console.log(wordOb.returnString().join(' '));
 
             console.log("\nGuessed Letters: " + guessedArray);
             console.log("Number of incorrect guesses: " + guessCount);

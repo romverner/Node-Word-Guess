@@ -18,7 +18,7 @@ var Word = function(hiddenWord) {
         for (var i = 0; i < wordArray.length; i++) {
             localArray.push(wordArray[i].revealLetter());
         };
-        localArray = localArray.join(" ");
+        // localArray = localArray.join(" ");
         return localArray;
     };
 
