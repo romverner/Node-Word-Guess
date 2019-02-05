@@ -22,11 +22,16 @@ var Word = function(hiddenWord) {
         return localArray;
     };
 
+    // Compares user-entered letter 'l' against hidden word array
     this.guessedLetter = function(l) {
+        var local = 0;
         for (var i = 0; i < wordArray.length; i++) {
             wordArray[i].compare(l);
-            console.log(wordArray[i].guessed);
+            if (wordArray[i].compare(l) === true) {
+                local++;
+            };
         };
+        return local;
     };
 };
 

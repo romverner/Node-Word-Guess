@@ -15,6 +15,7 @@ var Letter = function(val, guessed) {
     this.compare = function(guess) {
         if (guess === this.val) {
             this.guessed = true;
+            return true;
         };
     };
 };
